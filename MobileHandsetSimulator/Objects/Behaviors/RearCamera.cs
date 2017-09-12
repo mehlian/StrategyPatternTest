@@ -8,21 +8,21 @@ namespace MobileHandsetSimulator
 {
     public class RearCamera : IPhotographyDevice
     {
-        public int megaPixels { get; set; }
+        public int MegaPixels { get; set; }
 
         public RearCamera(int supportedMegaPixels)
         {
-            megaPixels = supportedMegaPixels;
+            MegaPixels = supportedMegaPixels;
         }
 
         public string RecordVideo(string location)
         {
-            return String.Format("Recording Video on {0} MP main camera", megaPixels.ToString());
+            return String.Format("Recording Video on {0} MP main camera", MegaPixels.ToString());
         }
 
         public string TakeSnap(string location)
         {
-            return String.Format("Taking Photograph on {0} MP main camera", megaPixels.ToString());
+            return String.Format("Taking Photograph on {0} MP main camera", MegaPixels.ToString());
         }
 
     }

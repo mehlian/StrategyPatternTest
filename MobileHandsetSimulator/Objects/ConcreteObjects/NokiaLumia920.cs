@@ -8,22 +8,14 @@ namespace MobileHandsetSimulator
 {
     public class NokiaLumia920 : Handset
     {
-        private readonly int rearCameraMPs = 12;
-        private readonly int frontCameraMPs = 5;
+        private readonly int _rearCameraMPs = 20;
+        private readonly int _frontCameraMPs = 5;
 
         public NokiaLumia920()
         {
-            photographyDevice = new RearCamera(rearCameraMPs);
-        }
-
-        public void LoadFrontCamera()
-        {
-            SetPhotographyDevice(new FrontCamera(frontCameraMPs));
-        }
-
-        public void LoadRearCamera()
-        {
-            SetPhotographyDevice(new RearCamera(rearCameraMPs));
+            SetPhotographyDevice(new RearCamera(_rearCameraMPs));
+            MainPhotographyDevice = new RearCamera(_rearCameraMPs);
+            SecondPhotographyDevice = new FrontCamera(_frontCameraMPs);
         }
 
         public override string Display()

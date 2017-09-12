@@ -8,22 +8,14 @@ namespace MobileHandsetSimulator
 {
     public class Nokia6600:Handset
     {
-        private readonly int rearCameraMPs = 12;
+        private readonly int _rearCameraMPs = 12;
 
         public Nokia6600()
         {
-            photographyDevice = new RearCamera(rearCameraMPs);
-        }
-
-        public void LoadFrontCamera()
-        {
+            SetPhotographyDevice(new RearCamera(_rearCameraMPs));
+            MainPhotographyDevice = new RearCamera(_rearCameraMPs);
             //Front-camera re not supported in this deviace
-            SetPhotographyDevice(null);
-        }
-
-        public void LoadRearCamera()
-        {
-            SetPhotographyDevice(new RearCamera(rearCameraMPs));
+            SecondPhotographyDevice = null;
         }
 
         public override string Display()

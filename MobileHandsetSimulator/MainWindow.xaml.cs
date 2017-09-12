@@ -23,55 +23,50 @@ namespace MobileHandsetSimulator
         public MainWindow()
         {
             InitializeComponent();
-
-
-
-            var nokiaLumia920 = new NokiaLumia920();
-            var nokia5510 = new Nokia5510();
-            cmbboxPhoneModel.ItemsSource = new[] { nokia5510 };
-
+            cmbboxPhoneModel.ItemsSource = new List<Handset> { new Nokia6600(), new NokiaLumia920(), new Nokia5510() };
+            cmbboxPhoneModel.SelectedIndex = 0;
         }
 
         private void btnCall_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = string.Empty;
-            var nokia6600 = new Nokia6600();
-            MainOutputWindow.Text = nokia6600.MakeACall("666");
+            Handset handset = (Handset)cmbboxPhoneModel.SelectionBoxItem;
+            MainOutputWindow.Text = handset.Display() + " " + handset.MakeACall("555 888 555");
         }
 
         private void btnSMS_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = string.Empty;
-            var nokia6600 = new Nokia6600();
-            MainOutputWindow.Text = nokia6600.SendSms("test sms");
+            Handset handset = (Handset)cmbboxPhoneModel.SelectedItem;
+            MainOutputWindow.Text = handset.SendSms("test sms");
         }
 
         private void btnActivateFrontCamera_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = "Activate front camera";
-            var nokia6600 = new Nokia6600();
-            nokia6600.LoadFrontCamera();
+            Handset handset = (Handset)cmbboxPhoneModel.SelectedItem;
+            handset.ActivateSecondPhotographyDevice();
         }
 
         private void btnActivateRearCamera_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = "Activate rear camera";
-            var nokia6600 = new Nokia6600();
-            nokia6600.LoadRearCamera();
+            Handset handset = (Handset)cmbboxPhoneModel.SelectedItem;
+            handset.ActivateMainPhotographyDevice();
         }
 
         private void btnTakeSnap_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = string.Empty;
-            var nokia6600 = new Nokia6600();
-            MainOutputWindow.Text = nokia6600.TakeSnap(@"I:\snap...");
+            Handset handset = (Handset)cmbboxPhoneModel.SelectedItem;
+            MainOutputWindow.Text = handset.TakeSnap("test Snap");
         }
 
         private void btnRecordVideo_Click(object sender, RoutedEventArgs e)
         {
             MainOutputWindow.Text = string.Empty;
-            var nokia6600 = new Nokia6600();
-            MainOutputWindow.Text = nokia6600.RecordVideo(@"I:\record...");
+            Handset handset = (Handset)cmbboxPhoneModel.SelectedItem;
+            MainOutputWindow.Text = handset.RecordVideo("test Record");
         }
     }
 }
