@@ -26,10 +26,10 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Button Grid.Column="0" Grid.Row="0" x:Name="btnCall" Content="Call"/>
-                    <Button Grid.Column="1" Grid.Row="0" x:Name="btnSMS" Content="SMS"/>
-                    <Button Grid.Column="3" Grid.Row="0" x:Name="btnTakeSnap" Content="Take Snap"/>
-                    <Button Grid.Column="4" Grid.Row="0" x:Name="btnRecordVideo" Content="Record Video"/>
+                    <Button Grid.Column="0" Grid.Row="0" x:Name="btnCall" Content="Call" Click="btnCall_Click"/>
+                    <Button Grid.Column="1" Grid.Row="0" x:Name="btnSMS" Content="SMS" Click="btnSMS_Click"/>
+                    <Button Grid.Column="3" Grid.Row="0" x:Name="btnTakeSnap" Content="Take Snap" Click="btnTakeSnap_Click"/>
+                    <Button Grid.Column="4" Grid.Row="0" x:Name="btnRecordVideo" Content="Record Video" Click="btnRecordVideo_Click"/>
                     <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="cmbboxPhoneModel">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
@@ -40,8 +40,8 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Button Grid.Column="3" Grid.Row="1" x:Name="btnActivateFrontCamera" Content="Activate Front Camera"/>
-                    <Button Grid.Column="4" Grid.Row="1" x:Name="btnActivateRearCamera" Content="Activate Rear Camera"/>
+                    <Button Grid.Column="3" Grid.Row="1" x:Name="btnActivateFrontCamera" Content="Activate Front Camera" Click="btnActivateFrontCamera_Click"/>
+                    <Button Grid.Column="4" Grid.Row="1" x:Name="btnActivateRearCamera" Content="Activate Rear Camera" Click="btnActivateRearCamera_Click"/>
                 </Grid>
             </DockPanel>
         </Grid>
