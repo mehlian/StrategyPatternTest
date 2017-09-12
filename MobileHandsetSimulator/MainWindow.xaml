@@ -1,0 +1,49 @@
+﻿<Window x:Class="MobileHandsetSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MobileHandsetSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" x:Name="MainOutputWindow" Text="Result:"/>
+            <DockPanel Grid.Row="1">
+                <Grid DockPanel.Dock="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="0" Grid.Row="0" x:Name="btnCall" Content="Call"/>
+                    <Button Grid.Column="1" Grid.Row="0" x:Name="btnSMS" Content="SMS"/>
+                    <Button Grid.Column="3" Grid.Row="0" x:Name="btnTakeSnap" Content="Take Snap"/>
+                    <Button Grid.Column="4" Grid.Row="0" x:Name="btnRecordVideo" Content="Record Video"/>
+                    <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="cmbboxPhoneModel">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Button Grid.Column="3" Grid.Row="1" x:Name="btnActivateFrontCamera" Content="Activate Front Camera"/>
+                    <Button Grid.Column="4" Grid.Row="1" x:Name="btnActivateRearCamera" Content="Activate Rear Camera"/>
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </StackPanel>
+</Window>
