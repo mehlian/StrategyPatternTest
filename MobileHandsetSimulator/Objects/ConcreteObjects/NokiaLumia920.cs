@@ -22,5 +22,10 @@ namespace MobileHandsetSimulator
         {
             return @"Nokia Lumia 920... A full-featured phone from Nokia";
         }
+
+        public override string ToString()
+        {
+            return "Nokia Lumia 920";
+        }
     }
 }

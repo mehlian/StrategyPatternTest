@@ -12,5 +12,10 @@ namespace MobileHandsetSimulator
         {
             return @"This is a very basic model from Nokia with no camera whatsoever!!";
         }
+
+        public override string ToString()
+        {
+            return "Nokia 5510";
+        }
     }
 }

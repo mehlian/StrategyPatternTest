@@ -23,5 +23,10 @@ namespace MobileHandsetSimulator
             return @"Nokia Lumia 6600... 
                         A Nokia phone with a lots of features and hight-resolution camera";
         }
+
+        public override string ToString()
+        {
+            return "Nokia 6600";
+        }
     }
 }
